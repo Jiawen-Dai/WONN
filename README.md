@@ -6,6 +6,15 @@
   A neural architecture built upon generalized Winfree synchronization dynamics.
 </p>
 
+<p align="center">
+  <img src="figures/teaser.png" width="950">
+</p>
+
+<p align="center">
+  <b>WONN</b> evolves neural representations on a toroidal phase space and applies generalized Winfree synchronization dynamics to visual recognition and reasoning tasks.
+</p>
+
+
 <hr>
 
 
