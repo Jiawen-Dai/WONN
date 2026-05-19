@@ -2,8 +2,6 @@
   Winfree Oscillatory Neural Network (WONN)
 </h1>
 
-<p align="center">
-  A neural architecture built upon generalized Winfree synchronization dynamics.
 </p>
 
 <p align="center">
