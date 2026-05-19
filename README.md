@@ -1,5 +1,3 @@
-# WONN: Winfree Oscillatory Neural Network
-
 <h1 align="center">
   Winfree Oscillatory Neural Networks (WONN)
 </h1>
