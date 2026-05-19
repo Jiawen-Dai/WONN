@@ -1,4 +1,4 @@
-# WONN: Winfree Oscillatory Neural Networks
+# WONN: Winfree Oscillatory Neural Network
 
 We introduced the $Winfree$ $Oscillatory$ $Neural$ $Network$ (WONN), a neural architecture built upon generalized Winfree synchronization dynamics. Unlike conventional architectures that primarily rely on static feature transformations, WONN performs computation through the collective evolution and synchronization of phase oscillators on a toroidal state space $(S^1)^d$. 
 
