@@ -1,0 +1,10 @@
+# Core dependencies for WONN.
+# For GPU training, install a PyTorch/torchvision build that matches your CUDA runtime.
+
+numpy>=1.23
+torch>=2.0
+torchvision>=0.15
+tqdm>=4.64
+ema-pytorch>=0.4
+tensorboard>=2.12
+wandb>=0.15
