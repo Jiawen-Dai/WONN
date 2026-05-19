@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-  <img src="figure/teaser.png" width="750">
+  <img src="figure/teaser.png" width="850">
 </p>
 
 <p align="center">
@@ -18,13 +18,13 @@ By combining flexible interaction parameterizations, hierarchical grouped synchr
 
 <hr>
 <p align="center">
-  <img src="figure/1_prob.gif" width="200">&nbsp;&nbsp;
-  <img src="figure/24_prob.gif" width="200">&nbsp;&nbsp;
-  <img src="figure/25_prob.gif" width="200">&nbsp;&nbsp;
+  <img src="figure/1_prob.gif" width="200">&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="figure/24_prob.gif" width="200">&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="figure/25_prob.gif" width="200">&nbsp;&nbsp;&nbsp;&nbsp;
 </p>
 
 <p align="center">
-  <img src="figure/twopeak.png" width="650"
+  <img src="figure/twopeak.png" width="850"
 
 </p>
 
