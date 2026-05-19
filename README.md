@@ -1,6 +1,6 @@
 # WONN: Winfree Oscillatory Neural Networks
 
-This repository contains the PyTorch implementation of **WONN**, a Winfree-dynamics-based oscillatory neural network for visual recognition and reasoning tasks.
+We introduced the \emph{Winfree Oscillatory Neural Network} (\emph{WONN}), a neural architecture built upon generalized Winfree synchronization dynamics. Unlike conventional architectures that primarily rely on static feature transformations, \emph{WONN} performs computation through the collective evolution and synchronization of phase oscillators on a toroidal state space $(S^1)^d$. By combining flexible interaction parameterizations, hierarchical grouped synchronization dynamics, and a dual phase--frequency state design, \emph{WONN} provides a scalable framework for oscillatory neural computation.
 
 The codebase currently includes experiments for:
 
