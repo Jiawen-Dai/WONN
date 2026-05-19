@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-  <img src="figure/teaser.png" width="950">
+  <img src="figure/teaser.png" width="750">
 </p>
 
 <p align="center">
@@ -13,14 +13,14 @@
 <hr>
 
 <p align="center">
-  <img src="figure/net.png" width="850">
+  <img src="figure/net.png" width="550">
+  <img src="figure/si.png" width="210">
 </p>
 
 <p align="center">
   <img src="figure/1_prob.gif" width="210">
   <img src="figure/24_prob.gif" width="210">
   <img src="figure/25_prob.gif" width="210">
-  <img src="figure/si.png" width="210">
 </p>
 
 
