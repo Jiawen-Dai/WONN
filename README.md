@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  <img src="figures/teaser.png" width="950">
+  <img src="visualization/teaser.png" width="950">
 </p>
 
 <p align="center">
