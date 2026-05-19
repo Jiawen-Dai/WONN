@@ -13,6 +13,8 @@
   <sup>3</sup>Shanghai Jiao Tong University
 </p>
 
+</h1>
+
 <p align="center">
   <img src="figure/teaser.png" width="750">
 </p>
@@ -20,8 +22,6 @@
 <p align="center">
   <b>WONN</b> evolves neural representations on a toroidal phase space and applies generalized Winfree synchronization dynamics.
 </p>
-
-<hr>
 
 We introduced the $Winfree$ $Oscillatory$ $Neural$ $Network$ (WONN), a neural architecture built upon generalized Winfree synchronization dynamics. Unlike conventional architectures that primarily rely on static feature transformations, WONN performs computation through the collective evolution and synchronization of phase oscillators on a toroidal state space $(S^1)^d$. 
 
