@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <b>WONN</b> evolves neural representations on a toroidal phase space and applies generalized Winfree synchronization dynamics to visual recognition and reasoning tasks.
+  <b>WONN</b> evolves neural representations on a toroidal phase space and applies generalized Winfree synchronization dynamics.
 </p>
 
 
