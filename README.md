@@ -16,11 +16,6 @@
 
 We introduced the $Winfree$ $Oscillatory$ $Neural$ $Network$ (WONN), a neural architecture built upon generalized Winfree synchronization dynamics. Unlike conventional architectures that primarily rely on static feature transformations, WONN performs computation through the collective evolution and synchronization of phase oscillators on a toroidal state space $(S^1)^d$. 
 
-<p align="center">
-  <img src="figure/net.png" width="560">&nbsp;&nbsp;
-  <img src="figure/si.png" width="210">
-</p>
-
 By combining flexible interaction parameterizations, hierarchical grouped synchronization dynamics, and a dual phase--frequency state design, WONN provides a scalable framework for oscillatory neural computation.
 
 <p align="center">
@@ -28,6 +23,8 @@ By combining flexible interaction parameterizations, hierarchical grouped synchr
   <img src="figure/24_prob.gif" width="200">&nbsp;&nbsp;
   <img src="figure/25_prob.gif" width="200">&nbsp;&nbsp;
 </p>
+
+
 
 The codebase currently includes experiments for:
 
