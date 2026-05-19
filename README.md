@@ -1,8 +1,7 @@
 <h1 align="center">
   Winfree Oscillatory Neural Network (WONN)
-</h1>
 
-<p align="center">
+  <p align="center">
   <b>Jiawen Dai</b><sup>3</sup> &nbsp; and &nbsp;
   <b>Yue Song</b><sup>1,2</sup>
 </p>
@@ -12,6 +11,8 @@
   <sup>2</sup>College of AI, Tsinghua University &nbsp;&nbsp;
   <sup>3</sup>Shanghai Jiao Tong University
 </p>
+
+</h1>
 
 <p align="center">
   <img src="figure/teaser.png" width="850">
@@ -38,7 +39,7 @@ By combining flexible interaction parameterizations, hierarchical grouped synchr
   <img src="figure/25_prob.gif" width="250">&nbsp;&nbsp;&nbsp;&nbsp;
 </p>
 
-<h1>
+<hr>
 
 The codebase currently includes experiments for:
 
