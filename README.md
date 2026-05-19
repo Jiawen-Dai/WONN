@@ -1,5 +1,5 @@
 <h1 align="center">
-  Winfree Oscillatory Neural Networks (WONN)
+  Winfree Oscillatory Neural Network (WONN)
 </h1>
 
 <p align="center">
