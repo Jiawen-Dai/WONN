@@ -26,9 +26,9 @@ By combining flexible interaction parameterizations, hierarchical grouped synchr
 </p>
 
 <p align="center">
-  <img src="figure/1_prob.gif" width="270">&nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="figure/24_prob.gif" width="270">&nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="figure/25_prob.gif" width="270">&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="figure/1_prob.gif" width="250">&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="figure/24_prob.gif" width="250">&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="figure/25_prob.gif" width="250">&nbsp;&nbsp;&nbsp;&nbsp;
 </p>
 
 <hr>
