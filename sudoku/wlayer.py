@@ -15,12 +15,48 @@ def pick_gn_groups(ch: int, max_groups: int = 8) -> int:
     return 1
 
 
-class WinfreeOscillatoryLayer(nn.Module):
-    """
-    Winfree dynamics layer for Sudoku.
-    The state variable theta is a phase field. Each recurrent step computes a sensitivity term cos(theta), an influence term sin(theta), and a learned coupling field from attention.
-    """
+class PatchwiseSingleIFunc(nn.Module):
+    def __init__(
+        self,
+        ch: int,
+        group_size: int = 1,
+        hidden_ratio: int = 2,
+    ):
+        super().__init__()
 
+        self.ch = int(ch)
+        self.group_size = int(group_size)
+        self.hidden_ratio = int(hidden_ratio)
+
+        hidden = self.ch * (self.group_size ** 2) * self.hidden_ratio
+
+        self.op = nn.Sequential(
+            nn.Conv2d(
+                self.ch,
+                hidden,
+                kernel_size=self.group_size,
+                stride=self.group_size,
+                padding=0,
+                groups=self.ch,
+                bias=True,
+            ),
+            nn.ReLU(inplace=True),
+            nn.Conv2d(
+                hidden,
+                self.ch,
+                kernel_size=1,
+                stride=1,
+                padding=0,
+                groups=self.ch,
+                bias=True,
+            ),
+        )
+
+    def forward(self, theta: torch.Tensor) -> torch.Tensor:
+        return self.op(torch.sin(theta))
+
+
+class WinfreeOscillatoryLayer(nn.Module):
     def __init__(
         self,
         ch: int,
@@ -28,6 +64,8 @@ class WinfreeOscillatoryLayer(nn.Module):
         norm: str = "gn",
         rope: bool = True,
         heads: int = 8,
+        group_size: int = 1,
+        hidden_ratio: int = 2,
     ):
         super().__init__()
 
@@ -35,6 +73,14 @@ class WinfreeOscillatoryLayer(nn.Module):
         self.coupling_type = str(coupling)
         self.norm_type = str(norm)
         self.heads = int(heads)
+        self.group_size = int(group_size)
+        self.hidden_ratio = int(hidden_ratio)
+
+        self.i_func = PatchwiseSingleIFunc(
+            ch=self.ch,
+            group_size=self.group_size,
+            hidden_ratio=self.hidden_ratio,
+        )
 
         if self.coupling_type != "attn":
             raise ValueError(
@@ -91,16 +137,13 @@ class WinfreeOscillatoryLayer(nn.Module):
         T: int,
         gamma: torch.Tensor,
         return_thetas: bool = False,
-        return_xs: bool = False,
         return_es: bool = False,
     ) -> Tuple[
         torch.Tensor,
         Optional[List[torch.Tensor]],
         Optional[List[torch.Tensor]],
     ]:
-        collect_thetas = bool(return_thetas or return_xs)
-
-        thetas = [] if collect_thetas else None
+        thetas = [] if return_thetas else None
         es = [torch.zeros(theta.shape[0], device=theta.device, dtype=theta.dtype)] if return_es else None
 
         theta = self.wrap_pm_pi(theta)
@@ -109,7 +152,7 @@ class WinfreeOscillatoryLayer(nn.Module):
             dtheta, energy_int = self.winfree_step(theta=theta, omega=omega)
             theta = self.wrap_pm_pi(theta + gamma * dtheta)
 
-            if collect_thetas:
+            if return_thetas:
                 thetas.append(theta)
 
             if return_es:
