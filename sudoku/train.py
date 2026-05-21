@@ -78,11 +78,6 @@ def parse_args():
     parser.add_argument("--compile_backend", type=str, default="inductor")
     parser.add_argument("--compile_dynamic", type=str2bool, default=False)
 
-    parser.add_argument("--use_wandb", type=str2bool, default=False)
-    parser.add_argument("--wandb_project", type=str, default="sudoku")
-    parser.add_argument("--wandb_entity", type=str, default=None)
-    parser.add_argument("--wandb_name", type=str, default=None)
-
     return parser.parse_args()
 
 
@@ -179,14 +174,9 @@ def evaluate(model, loader, device: torch.device) -> Metrics:
     }
 
 
-def log_metrics(writer, wandb_run, metrics: Metrics, prefix: str, epoch: int):
+def log_metrics(writer, metrics: Metrics, prefix: str, epoch: int):
     for key, value in metrics.items():
         writer.add_scalar(f"{prefix}/{key}", value, epoch)
-
-    if wandb_run is not None:
-        payload = {f"{prefix}/{key}": value for key, value in metrics.items()}
-        payload["epoch"] = epoch
-        wandb_run.log(payload, step=epoch)
 
 
 def main():
@@ -201,17 +191,6 @@ def main():
 
     jobdir, log_fh = make_run_dir(args.exp_name, root=args.save_dir, is_main=is_main)
     writer = SummaryWriter(jobdir) if is_main else None
-
-    wandb_run = None
-    if args.use_wandb and is_main:
-        import wandb
-
-        wandb_run = wandb.init(
-            project=args.wandb_project,
-            entity=args.wandb_entity,
-            name=args.wandb_name or args.exp_name,
-            config=vars(args),
-        )
 
     try:
         log_print(
@@ -382,7 +361,7 @@ def main():
             }
 
             if is_main:
-                log_metrics(writer, wandb_run, train_metrics, "train", epoch)
+                log_metrics(writer, train_metrics, "train", epoch)
                 log_print(
                     f"Epoch [{epoch + 1}/{args.epochs}] "
                     f"loss={train_metrics['loss']:.6f} "
@@ -398,8 +377,8 @@ def main():
                 ema_metrics = evaluate(ema.ema_model, testloader, device)
 
                 if is_main:
-                    log_metrics(writer, wandb_run, metrics, "test", epoch)
-                    log_metrics(writer, wandb_run, ema_metrics, "ema_test", epoch)
+                    log_metrics(writer, metrics, "test", epoch)
+                    log_metrics(writer, ema_metrics, "ema_test", epoch)
                     log_print(
                         f"[Test] board_acc={metrics['board_acc']:.6f} "
                         f"givens_acc={metrics['givens_acc']:.6f} "
@@ -436,8 +415,6 @@ def main():
     finally:
         if writer is not None:
             writer.close()
-        if wandb_run is not None:
-            wandb_run.finish()
         if log_fh is not None:
             log_fh.close()
         ddp_cleanup(is_ddp)
