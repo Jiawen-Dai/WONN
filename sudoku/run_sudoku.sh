@@ -39,7 +39,7 @@ WORKERS=${WORKERS:-8}
 LR=${LR:-1e-3}
 GRAD_CLIP=${GRAD_CLIP:-0.0}
 BETA=${BETA:-0.995}
-SEED=${SEED:-137}
+SEED=${SEED:-131}
 
 L=${L:-1}
 T=${T:-16}
@@ -78,7 +78,7 @@ fi
   --eval_batchsize "${EVAL_BS}" \
   --num_workers "${WORKERS}" \
   --lr "${LR}" \
-  --grad_clip "${GRAD_CLIP}" \
+  --clip_grad_norm "${GRAD_CLIP}" \
   --beta "${BETA}" \
   --seed "${SEED}" \
   --L "${L}" \
