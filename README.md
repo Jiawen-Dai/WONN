@@ -16,15 +16,13 @@
 
 <p align="center">
   <a href="https://jiawen-dai.github.io/WONN_Project_Page/">
-    <b>Project Page</b>
+    <img src="https://img.shields.io/badge/Project-Page-671372?style=for-the-badge">
   </a>
-  &nbsp; | &nbsp;
-  <a href="https://arxiv.org/abs/XXXX.XXXXX">
-    <b>Paper</b>
+  <a href="https://arxiv.org/abs/2605.20922">
+    <img src="https://img.shields.io/badge/arXiv-2605.20922-b31b1b?style=for-the-badge">
   </a>
-  &nbsp; | &nbsp;
-  <a href="https://github.com/jiawen-dai/WONN">
-    <b>Code</b>
+  <a href="https://arxiv.org/pdf/2605.20922">
+    <img src="https://img.shields.io/badge/PDF-Paper-blue?style=for-the-badge">
   </a>
 </p>
 
