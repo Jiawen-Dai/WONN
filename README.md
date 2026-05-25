@@ -2,6 +2,10 @@
   Winfree Oscillatory Neural Network (WONN)
 </h1>
 
+<p align="center">
+  <a href="https://jiawen-dai.github.io/WONN_Project_Page/">
+    <b>Project Page</b>
+  </a>
 </p>
 
 <p align="center">
