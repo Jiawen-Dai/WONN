@@ -3,8 +3,28 @@
 </h1>
 
 <p align="center">
+  <b>Jiawen Dai</b><sup>3</sup>
+  &nbsp;&nbsp; and &nbsp;&nbsp;
+  <b>Yue Song</b><sup>1,2</sup>
+</p>
+
+<p align="center">
+  <sup>1</sup>Shanghai Qi Zhi Institute &nbsp;&nbsp;
+  <sup>2</sup>College of AI, Tsinghua University &nbsp;&nbsp;
+  <sup>3</sup>Shanghai Jiao Tong University
+</p>
+
+<p align="center">
   <a href="https://jiawen-dai.github.io/WONN_Project_Page/">
     <b>Project Page</b>
+  </a>
+  &nbsp; | &nbsp;
+  <a href="https://arxiv.org/abs/XXXX.XXXXX">
+    <b>Paper</b>
+  </a>
+  &nbsp; | &nbsp;
+  <a href="https://github.com/jiawen-dai/WONN">
+    <b>Code</b>
   </a>
 </p>
 
@@ -15,8 +35,6 @@
 <p align="center">
   <b>WONN</b> evolves neural representations on a toroidal phase space and applies generalized Winfree synchronization dynamics.
 </p>
-
-<p align="center">
 
 <hr>
 
